@@ -1,15 +1,17 @@
-# Blackjack Application
+# Casino Application
 
 ## Introduction
 
 ### Overview
 
-This project involves the development of a Blackjack game application using Python and the Tkinter library for the graphical user interface (GUI). The game provides an interactive and engaging way to play Blackjack, simulating a real casino environment where the user competes against the dealer. The application includes features such as placing bets, hitting, standing, doubling down, and splitting hands.
+This project involves the development of a casino games application using Python and the Tkinter library for the graphical user interface (GUI). The game provides an interactive and engaging way to play Blackjack, Dice Game, and Limbo, simulating a real casino environment where the user competes against the dealer. The application includes features such as placing bets, hitting, standing, doubling down, and splitting hands in Blackjack, rolling dice in the Dice Game, and predicting outcomes in Limbo.
 
 ### Objectives
 
-- To create a user-friendly and interactive Blackjack game.
+
 - To implement the core functionalities of Blackjack, including dealing cards, calculating hand values, and managing bets.
+- To develop the Dice Game, allowing users to roll dice and win based on the outcome.
+- To create the Limbo game, where users predict outcomes and win based on their predictions.
 - To provide a simple and intuitive GUI for a seamless gaming experience.
 
 ## Blackjack Game Overview
@@ -25,12 +27,25 @@ Blackjack, also known as 21, is one of the most popular casino card games worldw
 - **Dealer’s Turn:** The dealer reveals their face-down card and must hit until their hand value is 17 or higher.
 - **Winning:** The player wins if their hand value is closer to 21 than the dealer’s without exceeding 21. A hand value over 21 is a 'bust,' resulting in an automatic loss.
 
+### How to Play Dice Game
+
+- **Placing Bets:** Players place their bets on the outcome of the dice roll.
+- **Rolling Dice:** The player chooses a target number and chooses whether the dice 'Rolls Over' or 'Rolls Under' and click 'Roll Dice'.
+- **Winning:** The player wins if the number obtained post rolling matches their bet prediction. The Bet amount is won by the player if he wins the bet else the player looses that amount.
+
+### How to Play Limbo
+
+- **Placing Bets:** Players place their bets and predict a multiplier value.
+- **Game Start:** The game generates a random multiplier.
+- **Winning:** The player wins if the generated multiplier is higher than their predicted value. The payout is calculated based on the predicted multiplier and the actual multiplier.
+
 ## Application Features
 
 - **Graphical User Interface (GUI):** Developed using Tkinter, providing an interactive interface for gameplay.
 - **Bet Management:** Allows users to place bets and manage their balance.
-- **Game Actions:** Implemented core game actions such as hit, stand, double down, and split.
-- **Game State Management:** Automatically handles the game state, including shuffling the deck and resetting the game after each round.
+- **Game Actions:** Implemented core game actions such as hit, stand, double down, and split for Blackjack; rolling dice for Dice Game; and predicting multipliers for Limbo.
+- **Game State Management:** Automatically handles the game state, including shuffling the deck, rolling dice, generating multipliers, and resetting the game after each round.
+
 
 ## Implementation
 
@@ -38,16 +53,33 @@ Blackjack, also known as 21, is one of the most popular casino card games worldw
 
 - **Python:** Main programming language.
 - **Tkinter:** Used for creating the GUI.
-- **Random:** Used for shuffling the deck and dealing cards.
+- **Random:** Used for shuffling the deck and dealing cards, rolling dice, and generating random multipliers in the Limbo game.
 
 ### Code Structure
 
-The application code is organized into several key sections:
+The application code is organized into several key sections for each game:
 
-1. **Imports and Initial Setup:** Import necessary libraries and initialize constants like the deck of cards and balance.
-2. **Helper Functions:** Define functions for dealing cards and calculating hand values.
-3. **BlackjackApp Class:** Main class encapsulating all game logic, including GUI elements, game actions, and state management.
-4. **Main Execution:** Initialize and run the game application.
+#### Blackjack Game
+
+1. **Imports and Initial Setup:** Import necessary libraries and initialize constants like the deck of cards, balance, and other game-specific variables.
+2. **Helper Functions:** Define functions for dealing cards, and calculating hand values.
+3. **BlackjackApp Class:** Main class encapsulating all Blackjack game logic, including GUI elements, game actions, and state management.
+
+#### Dice Game
+
+1. **Imports and Initial Setup:** Import necessary libraries and initialize constants like the dice, balance, and other game-specific variables.
+2. **Helper Functions:** Define functions for rolling dice and playing sound effects.
+3. **DiceGame Class:** Class encapsulating all Dice game logic, including GUI elements, game actions, and state management.
+
+#### Limbo Game
+
+1. **Imports and Initial Setup:** Import necessary libraries and initialize constants like the multipliers, balance, and other game-specific variables.
+2. **Helper Functions:** Define functions for generating multipliers and playing sound effects.
+3. **LimboGame Class:** Class encapsulating all Limbo game logic, including GUI elements, game actions, and state management.
+
+#### Main Execution
+
+1. **Main Execution:** Initialize and run the game application.
 
 ### Detailed Code Explanation
 
@@ -61,6 +93,7 @@ The application code is organized into several key sections:
 
 - Deal Card: Selects a random card from the deck, removes it from the deck, and returns it.
 - Calculate Hand Value: Calculates the total value of a hand. If the total value exceeds 21 and there are Aces in the hand, it reduces the total value by 10 for each Ace until the value is 21 or less, or there are no more Aces to adjust.
+- Play Sound: Plays a sound effect based on the action (deal, win, lose).
 
 **BlackjackApp Class**
 
@@ -79,6 +112,7 @@ The application code is organized into several key sections:
 - End Round: Ends the round, determining the outcome based on the player's and dealer's hand values, updating the balance, and resetting the bet.
 - Reset Bet: Resets the bet entry field.
 - Shuffle Deck: Shuffles the deck when the number of remaining cards is low.
+- Update Statistics: Updates and displays player statistics after each round.
 
 ## Main Execution
 
