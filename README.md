@@ -68,21 +68,55 @@ The application code is organized into several key sections for each game:
 #### Dice Game
 
 1. **Imports and Initial Setup:** Import necessary libraries and initialize constants like the dice, balance, and other game-specific variables.
-2. **Helper Functions:** Define functions for rolling dice and playing sound effects.
+2. **Helper Functions:** Define functions for rolling.
 3. **DiceGame Class:** Class encapsulating all Dice game logic, including GUI elements, game actions, and state management.
 
 #### Limbo Game
 
 1. **Imports and Initial Setup:** Import necessary libraries and initialize constants like the multipliers, balance, and other game-specific variables.
-2. **Helper Functions:** Define functions for generating multipliers and playing sound effects.
+2. **Helper Functions:** Define functions for generating multipliers.
 3. **LimboGame Class:** Class encapsulating all Limbo game logic, including GUI elements, game actions, and state management.
-
-#### Main Execution
-
-1. **Main Execution:** Initialize and run the game application.
 
 ### Detailed Code Explanation
 
+### Dice Game
+**Imports and Initial Setup**
+
+- Balance: Starting balance for the player, initially set to 1000.
+- Target Number: The target number is set to 50 on a slider.
+- Chosen Option: The "Roll under" option is chosen initially.
+
+**Helper Functions**
+
+- Calculate Win Amount: This function calculates the amount won based on the bet and the probability.
+
+**Dice Game Class**
+
+- Initialization: Initializes the Blackjack game window, setting up the initial state and creating the GUI components.
+- Create Widgets: Sets up the GUI components, including labels, buttons, and entry fields for displaying game information and allowing user actions.
+- Set Bet Options: Sets the chosen betting option and updates the result label with the selected option and target value.
+- Roll Dice: Simulates a dice roll, updates the user's balance based on the bet and result, and displays the outcome.
+- Update Balance: Updates the balance label to reflect the current balance.
+- Go Back to Menu: Closes the current window and reopens the start window.
+
+### Limbo Game
+**Imports and Initial Setup**
+
+- Balance: Starting balance for the player, initially set to 1000.
+- Bet Amount: the initial bet amount will be 10.
+- Multiplier Value: Starting Multiplier value is set to 2.
+
+**Helper Functions**
+
+- Play Limbo: The play_limbo function handles the betting logic, calculates win probability, determines the game result, updates the balance, and displays the outcome.
+
+**Limbo Class**
+
+- Initialization: Initializes the Blackjack game window, setting up the initial state and creating the GUI components.
+- Create Widgets: Sets up the GUI components, including labels, buttons, and entry fields for displaying game information and allowing user actions.
+- Update Balance: Updates the balance label to reflect the current balance.
+
+### Blackjack Game
 **Imports and Initial Setup**
 
 - Balance: Starting balance for the player, initially set to 1000.
@@ -93,11 +127,11 @@ The application code is organized into several key sections for each game:
 
 - Deal Card: Selects a random card from the deck, removes it from the deck, and returns it.
 - Calculate Hand Value: Calculates the total value of a hand. If the total value exceeds 21 and there are Aces in the hand, it reduces the total value by 10 for each Ace until the value is 21 or less, or there are no more Aces to adjust.
-- Play Sound: Plays a sound effect based on the action (deal, win, lose).
+
 
 **BlackjackApp Class**
 
-- Initialization: Initializes the main application window, setting up the initial state and creating the GUI components.
+- Initialization: Initializes the Blackjack game window, setting up the initial state and creating the GUI components.
 - Create Widgets: Sets up the GUI components, including labels, buttons, and entry fields for displaying game information and allowing user actions.
 - Update Balance: Updates the balance label to reflect the current balance.
 - Place Bet: Validates the bet amount and starts a new round if the bet is valid.
@@ -112,11 +146,10 @@ The application code is organized into several key sections for each game:
 - End Round: Ends the round, determining the outcome based on the player's and dealer's hand values, updating the balance, and resetting the bet.
 - Reset Bet: Resets the bet entry field.
 - Shuffle Deck: Shuffles the deck when the number of remaining cards is low.
-- Update Statistics: Updates and displays player statistics after each round.
 
 ## Main Execution
 
-The main part of the application initializes the main application window and starts the Tkinter main loop.
+The main part of the application initializes the main application window and starts the Tkinter main loop. 
 
 ## Conclusion
 
