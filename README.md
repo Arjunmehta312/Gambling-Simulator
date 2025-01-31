@@ -16,7 +16,7 @@ This project involves the development of a casino games application using Python
 
 ## Casino Games Overview
 
-### What are Lmbo, Dice game and Blackjack?
+### What are Limbo, Dice game and Blackjack?
 
 Limbo is a game where players predict a multiplier value, and the game generates a random multiplier. The player wins if the generated multiplier is higher than their predicted value. The payout is calculated based on the predicted multiplier and the actual multiplier.
 
