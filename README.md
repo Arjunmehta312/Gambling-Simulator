@@ -14,18 +14,21 @@ This project involves the development of a casino games application using Python
 - To create the Limbo game, where users predict outcomes and win based on their predictions.
 - To provide a simple and intuitive GUI for a seamless gaming experience.
 
-## Blackjack Game Overview
+## Casino Games Overview
 
-### What is Blackjack?
+### What are Lmbo, Dice game and Blackjack?
+
+Limbo is a game where players predict a multiplier value, and the game generates a random multiplier. The player wins if the generated multiplier is higher than their predicted value. The payout is calculated based on the predicted multiplier and the actual multiplier.
+
+Dice Game involves players placing bets on the outcome of a dice roll. Players choose a target number and predict whether the dice will roll over or under that number. The player wins if the outcome matches their prediction, and the bet amount is won or lost accordingly.
 
 Blackjack, also known as 21, is one of the most popular casino card games worldwide. The goal is to have a hand value closer to 21 than the dealer’s without exceeding 21. Players are dealt two initial cards and can choose to receive additional cards (hit) or keep their current hand (stand).
 
-### How to Play Blackjack
+### How to Play Limbo
 
-- **Initial Deal:** Each player is dealt two cards, and the dealer receives two cards (one face up and one face down).
-- **Player’s Turn:** Players can choose to 'hit' (receive another card) or 'stand' (keep their current hand). They can also 'double down' (double their bet and receive one more card) or 'split' (if the two initial cards are of the same value).
-- **Dealer’s Turn:** The dealer reveals their face-down card and must hit until their hand value is 17 or higher.
-- **Winning:** The player wins if their hand value is closer to 21 than the dealer’s without exceeding 21. A hand value over 21 is a 'bust,' resulting in an automatic loss.
+- **Placing Bets:** Players place their bets and predict a multiplier value.
+- **Game Start:** The game generates a random multiplier.
+- **Winning:** The player wins if the generated multiplier is higher than their predicted value. The payout is calculated based on the predicted multiplier and the actual multiplier.
 
 ### How to Play Dice Game
 
@@ -33,11 +36,12 @@ Blackjack, also known as 21, is one of the most popular casino card games worldw
 - **Rolling Dice:** The player chooses a target number and chooses whether the dice 'Rolls Over' or 'Rolls Under' and click 'Roll Dice'.
 - **Winning:** The player wins if the number obtained post rolling matches their bet prediction. The Bet amount is won by the player if he wins the bet else the player looses that amount.
 
-### How to Play Limbo
+### How to Play Blackjack
 
-- **Placing Bets:** Players place their bets and predict a multiplier value.
-- **Game Start:** The game generates a random multiplier.
-- **Winning:** The player wins if the generated multiplier is higher than their predicted value. The payout is calculated based on the predicted multiplier and the actual multiplier.
+- **Initial Deal:** Each player is dealt two cards, and the dealer receives two cards (one face up and one face down).
+- **Player’s Turn:** Players can choose to 'hit' (receive another card) or 'stand' (keep their current hand). They can also 'double down' (double their bet and receive one more card) or 'split' (if the two initial cards are of the same value).
+- **Dealer’s Turn:** The dealer reveals their face-down card and must hit until their hand value is 17 or higher.
+- **Winning:** The player wins if their hand value is closer to 21 than the dealer’s without exceeding 21. A hand value over 21 is a 'bust,' resulting in an automatic loss.
 
 ## Application Features
 
@@ -59,11 +63,11 @@ Blackjack, also known as 21, is one of the most popular casino card games worldw
 
 The application code is organized into several key sections for each game:
 
-#### Blackjack Game
+#### Limbo Game
 
-1. **Imports and Initial Setup:** Import necessary libraries and initialize constants like the deck of cards, balance, and other game-specific variables.
-2. **Helper Functions:** Define functions for dealing cards, and calculating hand values.
-3. **BlackjackApp Class:** Main class encapsulating all Blackjack game logic, including GUI elements, game actions, and state management.
+1. **Imports and Initial Setup:** Import necessary libraries and initialize constants like the multipliers, balance, and other game-specific variables.
+2. **Helper Functions:** Define functions for generating multipliers.
+3. **LimboGame Class:** Class encapsulating all Limbo game logic, including GUI elements, game actions, and state management.
 
 #### Dice Game
 
@@ -71,13 +75,30 @@ The application code is organized into several key sections for each game:
 2. **Helper Functions:** Define functions for rolling.
 3. **DiceGame Class:** Class encapsulating all Dice game logic, including GUI elements, game actions, and state management.
 
-#### Limbo Game
+#### Blackjack Game
 
-1. **Imports and Initial Setup:** Import necessary libraries and initialize constants like the multipliers, balance, and other game-specific variables.
-2. **Helper Functions:** Define functions for generating multipliers.
-3. **LimboGame Class:** Class encapsulating all Limbo game logic, including GUI elements, game actions, and state management.
+1. **Imports and Initial Setup:** Import necessary libraries and initialize constants like the deck of cards, balance, and other game-specific variables.
+2. **Helper Functions:** Define functions for dealing cards, and calculating hand values.
+3. **BlackjackApp Class:** Main class encapsulating all Blackjack game logic, including GUI elements, game actions, and state management.
 
 ### Detailed Code Explanation
+
+### Limbo Game
+**Imports and Initial Setup**
+
+- Balance: Starting balance for the player, initially set to 1000.
+- Bet Amount: the initial bet amount will be 10.
+- Multiplier Value: Starting Multiplier value is set to 2.
+
+**Helper Functions**
+
+- Play Limbo: The play_limbo function handles the betting logic, calculates win probability, determines the game result, updates the balance, and displays the outcome.
+
+**Limbo Class**
+
+- Initialization: Initializes the Blackjack game window, setting up the initial state and creating the GUI components.
+- Create Widgets: Sets up the GUI components, including labels, buttons, and entry fields for displaying game information and allowing user actions.
+- Update Balance: Updates the balance label to reflect the current balance.
 
 ### Dice Game
 **Imports and Initial Setup**
@@ -99,23 +120,6 @@ The application code is organized into several key sections for each game:
 - Update Balance: Updates the balance label to reflect the current balance.
 - Go Back to Menu: Closes the current window and reopens the start window.
 
-### Limbo Game
-**Imports and Initial Setup**
-
-- Balance: Starting balance for the player, initially set to 1000.
-- Bet Amount: the initial bet amount will be 10.
-- Multiplier Value: Starting Multiplier value is set to 2.
-
-**Helper Functions**
-
-- Play Limbo: The play_limbo function handles the betting logic, calculates win probability, determines the game result, updates the balance, and displays the outcome.
-
-**Limbo Class**
-
-- Initialization: Initializes the Blackjack game window, setting up the initial state and creating the GUI components.
-- Create Widgets: Sets up the GUI components, including labels, buttons, and entry fields for displaying game information and allowing user actions.
-- Update Balance: Updates the balance label to reflect the current balance.
-
 ### Blackjack Game
 **Imports and Initial Setup**
 
@@ -127,7 +131,6 @@ The application code is organized into several key sections for each game:
 
 - Deal Card: Selects a random card from the deck, removes it from the deck, and returns it.
 - Calculate Hand Value: Calculates the total value of a hand. If the total value exceeds 21 and there are Aces in the hand, it reduces the total value by 10 for each Ace until the value is 21 or less, or there are no more Aces to adjust.
-
 
 **BlackjackApp Class**
 
