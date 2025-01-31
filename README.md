@@ -156,4 +156,4 @@ The main part of the application initializes the main application window and sta
 
 ## Conclusion
 
-This Python Blackjack game project successfully demonstrates the integration of game logic with a graphical user interface. The game is designed to provide a realistic and engaging Blackjack experience, with functionalities that mirror a real casino environment. The use of Python and Tkinter allows for a simple yet effective implementation, making the game both fun and educational for users interested in learning about game development and GUI design.
+This Python casino games project successfully demonstrates the integration of game logic with a graphical user interface. The game is designed to provide a realistic and engaging casino games experience, with functionalities that mirror a real casino environment. The use of Python and Tkinter allows for a simple yet effective implementation, making the game both fun and educational for users interested in learning about game development and GUI design.
