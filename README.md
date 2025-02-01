@@ -22,7 +22,7 @@ Limbo is a game where players predict a multiplier value, and the game generates
 
 Dice Game involves players placing bets on the outcome of a dice roll. Players choose a target number and predict whether the dice will roll over or under that number. The player wins if the outcome matches their prediction, and the bet amount is won or lost accordingly.
 
-Blackjack, also known as 21, is one of the most popular casino card games worldwide. The goal is to have a hand value closer to 21 than the dealer’s without exceeding 21. Players are dealt two initial cards and can choose to receive additional cards (hit) or keep their current hand (stand).
+Blackjack, also known as 21, is one of the most popular casino card games worldwide. The goal is to have a hand value closer to 21 than the dealer’s without exceeding 21. Players are dealt two initial cards and can choose to receive additional cards (hit) or keep their current hand (stand). When the user has only half the initial amount, to warn users about losing all their money if they proceed further, an option is provided to stop gambling and shows rehabilitation resources.
 
 ### How to Play Limbo
 
