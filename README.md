@@ -1,89 +1,114 @@
-# Blackjack Application
+# Gambling Games Collection
 
-## Introduction
+## Overview
 
-### Overview
+This is a desktop gambling games application built using Python and Tkinter, featuring multiple casino-style games. The application provides an interactive platform for users to play Blackjack, Dice Roll, and Limbo games with a virtual balance.
 
-This project involves the development of a Blackjack game application using Python and the Tkinter library for the graphical user interface (GUI). The game provides an interactive and engaging way to play Blackjack, simulating a real casino environment where the user competes against the dealer. The application includes features such as placing bets, hitting, standing, doubling down, and splitting hands.
+## 🎮 Games Included
 
-### Objectives
+### 1. Blackjack
+- Classic Blackjack gameplay
+- Split hand functionality
+- Double down option
+- Realistic card graphics
+- Balance tracking and betting system
 
-- To create a user-friendly and interactive Blackjack game.
-- To implement the core functionalities of Blackjack, including dealing cards, calculating hand values, and managing bets.
-- To provide a simple and intuitive GUI for a seamless gaming experience.
+### 2. Dice Roll Game
+- Over/Under betting mechanism
+- Customizable target number
+- Dynamic win probability calculation
+- Real-time balance updates
 
-## Blackjack Game Overview
+### 3. Limbo Game
+- Multiplier-based betting
+- Probability-driven gameplay
+- Adjustable risk levels
+- Win/loss tracking
 
-### What is Blackjack?
+## 🚨 Responsible Gaming Features
 
-Blackjack, also known as 21, is one of the most popular casino card games worldwide. The goal is to have a hand value closer to 21 than the dealer’s without exceeding 21. Players are dealt two initial cards and can choose to receive additional cards (hit) or keep their current hand (stand).
+The application includes several features to promote responsible gambling:
+- Balance warning system
+- Warnings when significant portions of initial balance are lost
+- Help resources for gambling addiction
+- Option to reset balance
+- Psychological warning messages
 
-### How to Play Blackjack
+## 📋 Prerequisites
 
-- **Initial Deal:** Each player is dealt two cards, and the dealer receives two cards (one face up and one face down).
-- **Player’s Turn:** Players can choose to 'hit' (receive another card) or 'stand' (keep their current hand). They can also 'double down' (double their bet and receive one more card) or 'split' (if the two initial cards are of the same value).
-- **Dealer’s Turn:** The dealer reveals their face-down card and must hit until their hand value is 17 or higher.
-- **Winning:** The player wins if their hand value is closer to 21 than the dealer’s without exceeding 21. A hand value over 21 is a 'bust,' resulting in an automatic loss.
+- Python 3.7+
+- Tkinter (usually comes pre-installed with Python)
+- Pillow (PIL) library
+- Random module
 
-## Application Features
+## 🔧 Installation
 
-- **Graphical User Interface (GUI):** Developed using Tkinter, providing an interactive interface for gameplay.
-- **Bet Management:** Allows users to place bets and manage their balance.
-- **Game Actions:** Implemented core game actions such as hit, stand, double down, and split.
-- **Game State Management:** Automatically handles the game state, including shuffling the deck and resetting the game after each round.
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/gambling-games.git
+cd gambling-games
+```
 
-## Implementation
+2. Install required dependencies:
+```bash
+pip install pillow
+```
 
-### Libraries and Tools
+3. Ensure you have the required card and chip image files in the correct directory:
+   - Card images should be in `C:\Users\arjun\cards\`
+   - Naming convention: `{rank}_of_{suit}.png` (e.g., `ace_of_hearts.png`)
+   - Include a `back.png` for card back
+   - Chip images named as `{value}.png` (e.g., `10.png`, `50.png`)
 
-- **Python:** Main programming language.
-- **Tkinter:** Used for creating the GUI.
-- **Random:** Used for shuffling the deck and dealing cards.
+## 🖥️ User Interface
 
-### Code Structure
+### Start Window
+- Choose between Blackjack, Dice Roll, and Limbo games
+- Themed background image
 
-The application code is organized into several key sections:
+### Game Windows
+- Consistent color scheme
+- Intuitive controls
+- Real-time balance tracking
+- Interactive betting mechanisms
 
-1. **Imports and Initial Setup:** Import necessary libraries and initialize constants like the deck of cards and balance.
-2. **Helper Functions:** Define functions for dealing cards and calculating hand values.
-3. **BlackjackApp Class:** Main class encapsulating all game logic, including GUI elements, game actions, and state management.
-4. **Main Execution:** Initialize and run the game application.
+## 🎯 Game Mechanics
 
-### Detailed Code Explanation
+### Blackjack
+- Standard Blackjack rules
+- Hit, Stand, Double Down, Split options
+- Dealer AI following standard casino rules
 
-**Imports and Initial Setup**
+### Dice Roll
+- Choose to bet "Under" or "Over" a target number
+- Dynamic win calculation based on probability
 
-- Balance: Starting balance for the player, initially set to 1000.
-- Deck: List representing a standard deck of 52 cards, with each card appearing four times.
-- Card Values: Dictionary mapping each card to its corresponding value in Blackjack. Face cards (J, Q, K) are worth 10, and an Ace (A) can be worth either 1 or 11.
+### Limbo
+- Set a multiplier and bet amount
+- Win if random result meets probability conditions
 
-**Helper Functions**
+## ⚠️ Responsible Gambling Warnings
 
-- Deal Card: Selects a random card from the deck, removes it from the deck, and returns it.
-- Calculate Hand Value: Calculates the total value of a hand. If the total value exceeds 21 and there are Aces in the hand, it reduces the total value by 10 for each Ace until the value is 21 or less, or there are no more Aces to adjust.
+The application includes built-in warnings:
+- Alerts when balance drops to certain thresholds
+- Psychological intervention messages
+- Links to gambling addiction resources
 
-**BlackjackApp Class**
+## 🛠️ Customization
 
-- Initialization: Initializes the main application window, setting up the initial state and creating the GUI components.
-- Create Widgets: Sets up the GUI components, including labels, buttons, and entry fields for displaying game information and allowing user actions.
-- Update Balance: Updates the balance label to reflect the current balance.
-- Place Bet: Validates the bet amount and starts a new round if the bet is valid.
-- Start Round: Starts a new round by dealing hands to the player and dealer, and updates the hand labels. If the player has a Blackjack, they win immediately.
-- Enable Actions: Enables the action buttons (hit, stand, double down, split) based on the current hand.
-- Disable Actions: Disables the action buttons to prevent further actions during certain game states.
-- Hit: Adds a card to the player's hand and checks if the player has busted.
-- Stand: Ends the player's turn and proceeds to the dealer's turn.
-- Double Down: Doubles the bet, deals one more card, and checks if the player has busted.
-- Split: Splits the player's hand into two hands if they have two cards of the same value, and plays each hand separately.
-- Play Hand: Plays a split hand, checking for Blackjack and enabling actions.
-- End Round: Ends the round, determining the outcome based on the player's and dealer's hand values, updating the balance, and resetting the bet.
-- Reset Bet: Resets the bet entry field.
-- Shuffle Deck: Shuffles the deck when the number of remaining cards is low.
+You can easily modify:
+- Initial balance
+- Betting limits
+- Game-specific parameters
 
-## Main Execution
+## 🔒 Disclaimer
 
-The main part of the application initializes the main application window and starts the Tkinter main loop.
+This is a simulation game. Real gambling can be addictive and harmful. Always gamble responsibly.
 
-## Conclusion
+## 🤝 Contributing
 
-This Python Blackjack game project successfully demonstrates the integration of game logic with a graphical user interface. The game is designed to provide a realistic and engaging Blackjack experience, with functionalities that mirror a real casino environment. The use of Python and Tkinter allows for a simple yet effective implementation, making the game both fun and educational for users interested in learning about game development and GUI design.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
